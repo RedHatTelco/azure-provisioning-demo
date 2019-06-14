@@ -1,0 +1,17 @@
+---
+- name: HELLO WORLD FOR AZURE
+  hosts: localhost
+  gather_facts: no
+
+  tasks:
+
+    - name: GATHER FACTS FOR THE AZURE RESOURCE GROUP
+      azure_rm_resource_facts:
+        resource_group: manuallycreated
+        resource_type: resources
+      register: collected_data
+
+    - name: DISPLAY COLLECTED DATA
+      debug:
+        msg: "{{ item.name }}"
+      loop: "{{ collected_data.response }}"
