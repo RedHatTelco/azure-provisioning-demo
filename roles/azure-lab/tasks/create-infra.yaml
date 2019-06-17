@@ -14,7 +14,6 @@
     name: "{{ lab_name }}-{{ vnet_name }}"
     address_prefixes: "{{ vnet_address }}"
     tags: "{{ tag }}"
-  run_once: yes
 
 - name: Create Subnet
   delegate_to: localhost
@@ -24,7 +23,6 @@
     name: "{{ lab_name }}-{{ vnet_subnet_name }}"
     address_prefix: "{{ vnet_subnet_address }}"
     virtual_network: "{{ lab_name }}-{{ vnet_name }}"
-  run_once: yes
 
 - name: Create Public IP Address
   delegate_to: localhost
