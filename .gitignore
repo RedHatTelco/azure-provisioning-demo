@@ -1,1 +1,2 @@
-roles/azure-lab/files/azure-key*
+roles/azure-lab/files/azure-key
+!roles/azure-lab/files/azure-key.pub
