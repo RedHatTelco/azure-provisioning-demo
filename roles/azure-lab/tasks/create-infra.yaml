@@ -5,7 +5,6 @@
     name: "{{ lab_name }}-{{ rg_name }}"
     location: "{{ location }}"
     tags: "{{ tag }}"
-  run_once: yes
 
 - name: Create Virtual Network
   delegate_to: localhost

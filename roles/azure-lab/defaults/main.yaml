@@ -1,7 +1,7 @@
 ---
 # default variables for lab environments
-rg_name: rg-01
-location: canadacentral
+rg_name: AnsibleRG
+location: eastus
 vnet_name: vnet-01
 vnet_address: 10.0.0.0/16
 vnet_subnet_name: subnet-01
@@ -14,5 +14,5 @@ vm_size: Standard_DS1_v2
 sec_group_name: sg-01
 activity:
 tag: environment={{ lab_name }}
-key_dir: "{{ playbook_dir }}/roles/azure-lab/files/id_rsa.pub"
+key_dir: "{{ playbook_dir }}/roles/azure-lab/files/azure-key.pub"
 key_data: " {{ lookup('file', key_dir) }} "
