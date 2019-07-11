@@ -1,3 +1,0 @@
-[submodule "roles/rhel7-stig"]
-	path = roles/rhel7-stig
-	url = https://github.com/MindPointGroup/RHEL7-STIG
