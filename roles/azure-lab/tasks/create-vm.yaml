@@ -21,7 +21,7 @@
     vm_size: "{{ vm_size }}"
     tags:
       security: stig
-    admin_username: azureuser
+    admin_username: demouser
     ssh_password_enabled: false
     ssh_public_keys:
       - path: "/home/azureuser/.ssh/authorized_keys"
