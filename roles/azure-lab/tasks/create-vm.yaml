@@ -20,11 +20,11 @@
     name: "{{ inventory_hostname }}"
     vm_size: "{{ vm_size }}"
     tags:
-      security: stig
-    admin_username: demouser
+      server_type: webserver
+    admin_username: ec2-user
     ssh_password_enabled: false
     ssh_public_keys:
-      - path: "/home/demouser/.ssh/authorized_keys"
+      - path: "/home/ec2-user/.ssh/authorized_keys"
         key_data: "{{ key_data }}"
     network_interfaces: "{{ inventory_hostname }}-nic"
     image:
