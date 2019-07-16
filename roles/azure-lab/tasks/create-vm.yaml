@@ -24,7 +24,7 @@
     admin_username: demouser
     ssh_password_enabled: false
     ssh_public_keys:
-      - path: "/home/azureuser/.ssh/authorized_keys"
+      - path: "/home/demouser/.ssh/authorized_keys"
         key_data: "{{ key_data }}"
     network_interfaces: "{{ inventory_hostname }}-nic"
     image:
