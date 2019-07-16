@@ -20,8 +20,7 @@
     name: "{{ inventory_hostname }}"
     vm_size: "{{ vm_size }}"
     tags:
-      - "{{ tag }}"
-      - security: stig
+      security: stig
     admin_username: azureuser
     ssh_password_enabled: false
     ssh_public_keys:
