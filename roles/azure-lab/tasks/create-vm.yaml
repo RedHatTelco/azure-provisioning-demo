@@ -9,7 +9,7 @@
     security_group: "{{ sec_group_name }}-{{ rg_name }}"
     public_ip_name: "{{ inventory_hostname }}-{{ public_ip_name }}"
     tags: "{{ tag }}"
-    #ip_configurations: 
+    #ip_configurations:
     #  - name: ipconfig1
     #    public_ip_address_name: "{{ inventory_hostname }}-{{ public_ip_name }}"
 
@@ -19,7 +19,9 @@
     resource_group: "{{ lab_name }}-{{ rg_name }}"
     name: "{{ inventory_hostname }}"
     vm_size: "{{ vm_size }}"
-    tags: "{{ tag }}"
+    tags:
+      - "{{ tag }}"
+      - security: stig
     admin_username: azureuser
     ssh_password_enabled: false
     ssh_public_keys:
