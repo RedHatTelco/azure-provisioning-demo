@@ -1,7 +1,7 @@
 ---
 - name: Create Resource Group
   delegate_to: localhost
-  azure_rm_resourcegroup:
+  azure.azcollection.azure_rm_resourcegroup:
     name: "{{ lab_name }}-{{ rg_name }}"
     location: "{{ location }}"
     tags: "{{ tag }}"
@@ -9,7 +9,7 @@
 - name: Create Virtual Network
   delegate_to: localhost
   ignore_errors: yes
-  azure_rm_virtualnetwork:
+  azure.azcollection.azure_rm_virtualnetwork:
     resource_group: "{{ lab_name }}-{{ rg_name }}"
     name: "{{ lab_name }}-{{ vnet_name }}"
     address_prefixes: "{{ vnet_address }}"
@@ -18,7 +18,7 @@
 - name: Create Subnet
   delegate_to: localhost
   ignore_errors: yes
-  azure_rm_subnet:
+  azure.azcollection.azure_rm_subnet:
     resource_group: "{{ lab_name }}-{{ rg_name }}"
     name: "{{ lab_name }}-{{ vnet_subnet_name }}"
     address_prefix: "{{ vnet_subnet_address }}"
@@ -26,7 +26,7 @@
 
 - name: Create Public IP Address
   delegate_to: localhost
-  azure_rm_publicipaddress:
+  azure.azcollection.azure_rm_publicipaddress:
     resource_group: "{{ lab_name }}-{{ rg_name }}"
     allocation_method: Static
     name: "{{ inventory_hostname }}-{{ public_ip_name }}"
@@ -40,7 +40,7 @@
 - name: Create Network Security Group That Allows SSH
   delegate_to: localhost
   ignore_errors: yes
-  azure_rm_securitygroup:
+  azure.azcollection.azure_rm_securitygroup:
     resource_group: "{{ lab_name }}-{{ rg_name }}"
     name: "{{ sec_group_name }}-{{ rg_name }}"
     tags: "{{ tag }}"
